@@ -10,6 +10,7 @@ This project is enhanced by **Claude by Anthropic** Claude Sonnet 4.6
     Diagnosed the `HHH100046` JDBC connection error and configured `application.properties` with H2 in-memory database settings
     Fixed the `UnsatisfiedDependencyException` caused by a typo in the JPA repository method name (`existsbyEmail` → `existsByEmail`)
     Identified and corrected invalid Maven artifact IDs in `pom.xml`
+    Repaired issues on application.properties, resolved deployment issue
 
 ### Code Generation
     Added missing getters and setters to the `StaffRating` entity so JPA and form binding could work
