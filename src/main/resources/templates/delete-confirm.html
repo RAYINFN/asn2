@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>!!!Delete!!!</title>
+</head>
+<body>
+<div>
+    <h1>Delete</h1>
+    <p>Are you sure you want to delete <strong th:text="${rating.staffName}"></strong>?</p>
+    <form th:action="@{/ratings/{id}/delete(id=${rating.id})}" method="post">
+        <div>
+            <button type="submit">Yes, Delete</button>
+            <a th:href="@{/ratings/{id}(id=${rating.id})}">Cancel</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

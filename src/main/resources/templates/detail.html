@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<div>
+    <h1>Detail</h1>
+    <div>
+        <span>Name: </span>
+        <span th:text="${rating.staffName}"></span>
+    </div>
+    <div>
+        <span>Email: </span>
+        <span th:text="${rating.email}"></span>
+    </div>
+    <div>
+        <span>Role: </span>
+        <span th:text="${rating.profile.profileTitle}"></span>
+    </div>
+    <div>
+        <span>Clarity: </span>
+        <span th:text="${rating.clarityScore}"></span>
+    </div>
+    <div>
+        <span>Niceness: </span>
+        <span th:text="${rating.nicenessScore}"></span>
+    </div>
+    <div>
+        <span>Knowledgeability: </span>
+        <span th:text="${rating.knowledgeabilityScore}"></span>
+    </div>
+    <div>
+        <span>Comment: </span>
+        <span th:text="${rating.comment}"></span>
+    </div>
+    <div>
+        <span>Created: </span>
+        <span th:text="${rating.createdAt}"></span>
+    </div>
+    <div>
+        <span>Updated: </span>
+        <span th:text="${rating.updatedAt}"></span>
+    </div>
+    <div>
+        <a th:href="@{/ratings/{id}/edit(id=${rating.id})}">Edit</a>
+        <a th:href="@{/ratings/{id}/delete(id=${rating.id})}">Delete</a>
+        <a href="/ratings">Back to List</a>
+    </div>
+</div>
+</body>
+</html>

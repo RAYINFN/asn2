@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<div>
+    <h1>Create New</h1>
+    <form th:action="@{/ratings}" th:object="${staffRating}" method="post">
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{staffName}" />
+            <span th:if="${#fields.hasErrors('staffName')}" th:errors="*{staffName}"></span>
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="email" th:field="*{email}" />
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+        <div>
+            <label>Role:</label>
+            <select th:field="*{profile.role}">
+                <option th:each="r : ${roles}" th:value="${r}" th:text="${r}"></option>
+            </select>
+            <span th:if="${#fields.hasErrors('profile.role')}" th:errors="*{profile.role}"></span>
+        </div>
+        <div>
+            <label>Clarity Score (1-10):</label>
+            <input type="number" min="1" max="10" th:field="*{clarityScore}" />
+            <span th:if="${#fields.hasErrors('clarityScore')}" th:errors="*{clarityScore}"></span>
+        </div>
+        <div>
+            <label>Niceness Score (1-10):</label>
+            <input type="number" min="1" max="10" th:field="*{nicenessScore}" />
+            <span th:if="${#fields.hasErrors('nicenessScore')}" th:errors="*{nicenessScore}"></span>
+        </div>
+        <div>
+            <label>Knowledgeability Score (1-10):</label>
+            <input type="number" min="1" max="10" th:field="*{knowledgeabilityScore}" />
+            <span th:if="${#fields.hasErrors('knowledgeabilityScore')}" th:errors="*{knowledgeabilityScore}"></span>
+        </div>
+        <div>
+            <label>Comment:</label>
+            <textarea th:field="*{comment}" rows="4"></textarea>
+            <span th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}"></span>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+            <a href="/ratings">Cancel</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
